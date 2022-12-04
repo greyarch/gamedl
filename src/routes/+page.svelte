@@ -12,7 +12,13 @@
 </script>
 
 <div class="container">
-	<img class="snapshot" src={data.snapshot} alt="Game pic" />
+	<div class="title">
+		<h3>From which game is this picture?</h3>
+	</div>
+
+	<div class="image">
+		<img class="snapshot" src={data.snapshot} alt="Game pic" />
+	</div>
 
 	<div class="answers">
 		{#each data.gameNames as name}
@@ -22,26 +28,33 @@
 </div>
 
 <style>
-    :global(body) {
-        background-color: darkslategrey;
-    }
+	:global(body) {
+		background-color: darkslategrey;
+	}
 
 	div.container {
-		margin: 1em;
 		display: grid;
-		grid-template-columns: auto auto;
-        gap: 1em;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr 10fr;
+		grid-column-gap: 5px;
+		grid-row-gap: 5px;
+	}
+
+	div.title {
+		grid-area: 1 / 1 / 2 / 2;
+		color: white;
+	}
+
+	div.image {
+		grid-area: 2 / 1 / 3 / 2;
+	}
+
+	div.image img {
+		max-width: 70vw;
 	}
 
 	div.answers {
-		grid-column-start: 2;
-		grid-column-end: 2;
-	}
-
-	img.snapshot {
-		grid-column-start: 1;
-		grid-column-end: 1;
-        width: 100%
+		grid-area: 2 / 2 / 3 / 3;
 	}
 
 	button {
