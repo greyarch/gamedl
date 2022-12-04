@@ -2,13 +2,15 @@
 	export let data;
 
 	function guess() {
-		console.log(this.textContent);
 		if (this.textContent === data.answer) {
 			this.classList.add('right');
+            showPlayAgain = true;
 		} else {
 			this.classList.add('wrong');
 		}
 	}
+
+    let showPlayAgain = false;
 </script>
 
 <div class="container">
@@ -24,6 +26,11 @@
 		{#each data.gameNames as name}
 			<button on:click={guess} class:wrong={false} class:right={false}>{name}</button>
 		{/each}
+        {#if showPlayAgain}
+            <br>
+            <hr>
+            <button on:click={() => location.reload(true)}>WELL DONE! PLAY AGAIN?</button>
+        {/if}
 	</div>
 </div>
 

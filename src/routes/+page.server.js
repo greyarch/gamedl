@@ -19,8 +19,6 @@ export const load = async ({ fetch }) => {
 	)
     const allSnapshots = (await snapshots.json()).results;
 
-    console.log(`Answer is ${game.name}, num of snapshot: ${allSnapshots.length}`)
-
 	return {
         answer: game.name,
 		gameNames: allGames.map((gm) => gm.name),
