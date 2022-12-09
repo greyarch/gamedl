@@ -16,7 +16,7 @@
 			class="bg-gray-200 sm:grid grid-cols-4 grid-rows-1 px-4 py-6 min-h-full lg:min-h-screen space-y-6 sm:space-y-0 sm:gap-4"
 		>
 			<Snapshot image={data.snapshot} />
-			<div class="h-96 col-span-1 ">
+			<div class="h-96 col-span-1">
 				<Answers
 					on:guessed={() => (showPlayAgain = true)}
 					answer={data.answer}
