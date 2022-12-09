@@ -3,6 +3,7 @@
 	import Answers from './Answers.svelte';
 	import PlayAgain from './PlayAgain.svelte';
 	import Snapshot from './Snapshot.svelte';
+
 	export let data;
 
 	let showPlayAgain = false;

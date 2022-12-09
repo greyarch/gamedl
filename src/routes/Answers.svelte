@@ -1,16 +1,24 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 
+	import {current, best} from '../stores/streak.js';
+
 	export let answer;
 	export let gameNames;
 
 	const dispatch = createEventDispatcher();
 
+	let guesses = 0;
+
 	function guess() {
 		if (this.textContent === answer) {
 			this.classList.add('bg-green-500', 'text-white');
+			if (!guesses) $current = $current + 1;
+			if ($current > $best) $best = $current;
 			dispatch('guessed');
 		} else {
+			$current = 0
+			guesses++;
 			this.classList.add('bg-red-500', 'text-white');
 		}
 	}
