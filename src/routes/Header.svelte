@@ -11,7 +11,7 @@
 				Guess the Game!
 			</h1>
 			<h1 class="flex items-center text-xl">
-				Your streak: {$current} / {$best}
+				<span class="pr-2 hidden sm:block">Your streak:</span>{$current} / {$best}
 			</h1>
 		</div>
 	</nav>
