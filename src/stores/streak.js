@@ -1,4 +1,4 @@
-import { writable } from 'svelte-local-storage-store'
+import { persisted } from 'svelte-persisted-store';
 
-export const current = writable('current', 0)
-export const best = writable('best', 0)
+export const current = persisted('current', 0);
+export const best = persisted('best', 0);
